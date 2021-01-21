@@ -9,10 +9,10 @@ class Lesson2 {
      * @param x на текущем этапе входное значение будет больше нуля
      *
      * @return возвращаем только целую часть от полученного результата,
-     * хвост отбрасываем без откругления
+     * хвост отбрасываем без округления
      */
     static int formula(int x) {
-        return 0;
+        return (int) Math.sqrt(13 * x + 13.0 / x);
     }
 
     /**
@@ -23,13 +23,18 @@ class Lesson2 {
      * получение символа на определенной позиции: .charAt();
      * приведение к верхнему регистру: .toUpperCase();
      *
-     * @param fullName на текущем этапе имена будут состоять из имени, фамили и отчества, разделяться пробелами.
+     * @param fullName на текущем этапе имена будут состоять из имени, фамилии и отчества, разделяться пробелами.
      *                 Регистр букв во входном параметре может быть любым.
      *
      * @return возвращаем инициалы в верхнем регистре разделенные точкой, как в примере выше
      */
     static String initials(String fullName) {
-        return null;
+        String result = "";
+        String[] fio = fullName.split(" ");
+        for(int i = 0; i < fio.length; i++) {
+            char a = fio[i].charAt(0);
+            result = result + a + ".";
+        }
+        return result.toUpperCase();
     }
-
 }
